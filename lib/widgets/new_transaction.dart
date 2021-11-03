@@ -11,8 +11,10 @@ class NewTransaction extends StatelessWidget {
   void submitData() {
     final enteredTitle = titleController.text;
     final enteredAmount = double.parse(amountController.text);
-    if (enteredAmount <= 0 && enteredTitle.isEmpty) return;
-    addNewTx(enteredTitle, enteredTitle);
+    if (enteredAmount <= 0 || enteredTitle.isEmpty) {
+      return;
+    }
+    addNewTx(enteredTitle, enteredAmount);
   }
 
   @override
