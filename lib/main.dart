@@ -3,7 +3,6 @@
 import 'package:expense_tracker/model/transaction.dart';
 import 'package:expense_tracker/widgets/new_transaction.dart';
 import 'package:expense_tracker/widgets/transaction_list.dart';
-import 'package:expense_tracker/widgets/user_transactions.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -49,7 +48,11 @@ class _MyHomePageState extends State<MyHomePage> {
     showModalBottomSheet(
         context: ctx,
         builder: (_) {
-          return NewTransaction(_addNewTransaction);
+          return GestureDetector(
+            child: NewTransaction(_addNewTransaction),
+            onTap: () {},
+            behavior: HitTestBehavior.opaque,
+          );
         });
   }
 
